@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -37,7 +38,7 @@
 
 	<scm>
 		<url>https://github.com/avianey/apache-xmlgraphics-batik-maven</url>
-		<developerConnection>scm:git:git@github.com/avianey/apache-xmlgraphics-batik-maven.git</developerConnection>
+		<developerConnection>scm:git:http://git@github.com/avianey/apache-xmlgraphics-batik-maven.git</developerConnection>
 		<connection>scm:git:git://github.com/avianey/apache-xmlgraphics-batik-maven.git</connection>
 		<tag>HEAD</tag>
 	</scm>
@@ -119,8 +120,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.9.1</version>
-				<!-- <configuration> <additionalparam>-Xdoclint:none</additionalparam> 
-					</configuration> -->
+				<!-- <configuration> <additionalparam>-Xdoclint:none</additionalparam> </configuration> -->
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -155,16 +155,32 @@
 					<pushChanges>false</pushChanges>
 				</configuration>
 			</plugin>
-
+<!-- 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>checkout</goal>
+						</goals>
+						<configuration>
+							<checkoutDirectory>${project.build.directory}/${project.build.finalName}/somepath</checkoutDirectory>
+							<connectionUrl>scm:git:git://server_name[:port]/path_to_repository</connectionUrl>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+-->
 		</plugins>
 
 	</build>
 
 
-	<!-- 
-	mvn clean release:clean -s settings.xml 
-	mvn release:prepare -s settings.xml 
-	mvn release:perform -s settings.xml -->
+	<!-- mvn clean release:clean -s settings.xml mvn release:prepare -s settings.xml 
+		mvn release:perform -s settings.xml -->
 	<profiles>
 		<profile>
 			<id>release-sign-artifacts</id>
