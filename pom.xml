@@ -4,7 +4,7 @@
 
 	<groupId>fr.avianey.apache-xmlgraphics</groupId>
 	<artifactId>batik</artifactId>
-	<version>1.8pre-20141006</version>
+	<version>1.8pre-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<description>
@@ -39,7 +39,7 @@
 		<url>https://github.com/avianey/apache-xmlgraphics-batik-maven</url>
 		<developerConnection>scm:git:http://git@github.com/avianey/apache-xmlgraphics-batik-maven.git</developerConnection>
 		<connection>scm:git:git://github.com/avianey/apache-xmlgraphics-batik-maven.git</connection>
-		<tag>batik-1.8pre-20141006</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<dependencies>
