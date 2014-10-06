@@ -1,11 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>fr.avianey.apache-xmlgraphics</groupId>
 	<artifactId>batik</artifactId>
-	<version>1.8pre-SNAPSHOT</version>
+	<version>1.8pre-20141006</version>
 	<packaging>jar</packaging>
 
 	<description>
@@ -40,7 +39,7 @@
 		<url>https://github.com/avianey/apache-xmlgraphics-batik-maven</url>
 		<developerConnection>scm:git:http://git@github.com/avianey/apache-xmlgraphics-batik-maven.git</developerConnection>
 		<connection>scm:git:git://github.com/avianey/apache-xmlgraphics-batik-maven.git</connection>
-		<tag>HEAD</tag>
+		<tag>batik-1.8pre-20141006</tag>
 	</scm>
 
 	<dependencies>
