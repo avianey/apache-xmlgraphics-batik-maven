@@ -84,7 +84,6 @@
 			</resource>
 		</resources>
 
-
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -120,7 +119,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.9.1</version>
-				<!-- <configuration> <additionalparam>-Xdoclint:none</additionalparam> </configuration> -->
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam> 
+				</configuration>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -147,6 +148,30 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1</version>
+			   <executions>
+				   <execution>
+					   <phase>initialize</phase>
+						<id>invoke build</id>
+						   <goals>
+								<goal>exec</goal>
+							</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<executable>git</executable>
+					<arguments>
+						<argument>submodule</argument>
+						<argument>update</argument>
+						<argument>--init</argument>
+						<argument>--recursive</argument>
+					</arguments>
+				</configuration>
+			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -155,32 +180,16 @@
 					<pushChanges>false</pushChanges>
 				</configuration>
 			</plugin>
-<!-- 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-scm-plugin</artifactId>
-				<version>1.1</version>
-				<executions>
-					<execution>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>checkout</goal>
-						</goals>
-						<configuration>
-							<checkoutDirectory>${project.build.directory}/${project.build.finalName}/somepath</checkoutDirectory>
-							<connectionUrl>scm:git:git://server_name[:port]/path_to_repository</connectionUrl>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
--->
 		</plugins>
 
 	</build>
 
 
-	<!-- mvn clean release:clean -s settings.xml mvn release:prepare -s settings.xml 
-		mvn release:perform -s settings.xml -->
+	<!-- 
+		mvn clean release:clean
+		mvn release:prepare
+		mvn release:perform -s settings.xml 
+	-->
 	<profiles>
 		<profile>
 			<id>release-sign-artifacts</id>
@@ -215,6 +224,7 @@
 				</repository>
 			</distributionManagement>
 		</profile>
+		
 	</profiles>
 
 </project>
