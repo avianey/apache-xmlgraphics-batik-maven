@@ -1,3 +1,4 @@
 [submodule "batik"]
 	path = batik
 	url = https://github.com/apache/batik.git
+	branch = batik-1_8
