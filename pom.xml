@@ -39,7 +39,7 @@
 		<url>https://github.com/avianey/apache-xmlgraphics-batik-maven</url>
 		<developerConnection>scm:git:http://git@github.com/avianey/apache-xmlgraphics-batik-maven.git</developerConnection>
 		<connection>scm:git:git://github.com/avianey/apache-xmlgraphics-batik-maven.git</connection>
-		<tag>HEAD</tag>
+		<tag>batik-1.8</tag>
 	</scm>
 
 	<dependencies>
@@ -67,6 +67,13 @@
 			<groupId>org.apache.xmlgraphics</groupId>
 			<artifactId>xmlgraphics-commons</artifactId>
 			<version>2.0.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>rhino</groupId>
+		    <artifactId>js</artifactId>
+		    <version>1.6R5</version>
+		    <scope>system</scope>
+		    <systemPath>${project.basedir}/batik/lib/js.jar</systemPath>
 		</dependency>
 		<!-- <dependency> <groupId>rhino</groupId> <artifactId>js</artifactId> 
 			<version>1.6R5</version> </dependency> <dependency> <groupId>jacl</groupId> 
